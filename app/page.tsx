@@ -1,12 +1,15 @@
-import Image from 'next/image'
 import Home from './components/Home';
+import About from './components/About';
 import Header from './components/Header';
 
 export default function App() {
-  return (
-      <main>
-        <Header />
-        <Home />
-      </main>
-  );
+    return (
+        <div>
+            <Header />
+            <main className="mt-[-7rem]">
+                <Home />
+                <About />
+            </main>
+        </div>
+    );
 }

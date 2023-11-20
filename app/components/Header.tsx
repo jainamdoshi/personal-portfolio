@@ -1,24 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { FC, forwardRef, MouseEventHandler, useState } from 'react';
+import { FC, forwardRef, MouseEventHandler, useCallback, useEffect, useState } from 'react';
 import { IconType } from 'react-icons';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { GrDocumentPdf } from "react-icons/gr";
 
 export default function Header() {
-    const [selectedLink, setSelectedLink] = useState('Home');
+    const [selectedLink, setSelectedLink] = useState('home');
+    const [scrollY, setScrollY] = useState(0);
+
+    const onScroll = useCallback((event: Event) => {
+        setScrollY(window.scrollY);
+        if (window.scrollY < 200) {
+            setSelectedLink('home');
+        }
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('scroll', onScroll, { passive: true });
+        
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+        };
+    }, [onScroll]);
+
 
     return (
-        <div className="bg-transparent absolute w-full flex flex-row justify-between mt-5">
+        <header className={`${scrollY < 40 ? "bg-transparent" : "bg-[#131313]"} sticky top-0 w-full flex flex-row justify-between pt-5 z-50 duration-200`}>
             <div className="w-2/5 to-left">
                 <ul className="flex justify-between items-center py-4 px-12">
-                    <NavLink label="Home" selected={selectedLink == 'Home'} action={setSelectedLink} />
-                    <NavLink label="About" selected={selectedLink == 'About'} action={setSelectedLink} />
-                    <NavLink label="Skills" selected={selectedLink == 'Skills'} action={setSelectedLink} />
-                    <NavLink label="Projects" selected={selectedLink == 'Projects'} action={setSelectedLink} />
-                    <NavLink label="Contact" selected={selectedLink == 'Contact'} action={setSelectedLink} />
+                    <NavLink label="Home" selected={selectedLink == 'home'} action={setSelectedLink} />
+                    <NavLink label="About" selected={selectedLink == 'about'} action={setSelectedLink} />
+                    <NavLink label="Skills" selected={selectedLink == 'skills'} action={setSelectedLink} />
+                    <NavLink label="Projects" selected={selectedLink == 'projects'} action={setSelectedLink} />
+                    <NavLink label="Contact" selected={selectedLink == 'contact'} action={setSelectedLink} />
                 </ul>
             </div>
             <div className="w-1/4 to-right">
@@ -29,7 +46,7 @@ export default function Header() {
                     <MediaLink icon={GrDocumentPdf} href="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Doshi+Resume.pdf" />
                 </ul>
             </div>
-        </div>
+        </header>
     );
 }
 
@@ -60,8 +77,8 @@ type NavLinkProps = {
 
 const NavLink: FC<NavLinkProps> = (props) => {
     return (
-        <Link passHref legacyBehavior href={`#${props.label}`}>
-            <InnerLink label={props.label} selected={props.selected} onClick={() => props.action(props.label)} />
+        <Link passHref legacyBehavior href={`#${props.label.toLowerCase()}`}>
+            <InnerLink label={props.label} selected={props.selected} onClick={() => props.action(props.label.toLowerCase())} />
         </Link>
     );
 };
