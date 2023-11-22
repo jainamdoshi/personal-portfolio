@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
     content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -14,9 +15,24 @@ const config: Config = {
             },
             colors: {
                 'pink-red': '#f5004e',
+                grey: 'rgba(198,201,216, 0.75)',
+            },
+            textShadow: {
+                'pink-red': '-0.15rem 0.15rem 0.15rem #f5004e',
             },
         },
     },
-    plugins: [],
+    plugins: [
+        plugin(function ({ matchUtilities, theme }) {
+            matchUtilities(
+                {
+                    'text-shadow': (value) => ({
+                        textShadow: value,
+                    }),
+                },
+                { values: theme('textShadow') }
+            );
+        }),
+    ],
 };
 export default config;
