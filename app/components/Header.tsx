@@ -12,9 +12,10 @@ export default function Header() {
     const [scrollY, setScrollY] = useState(0);
 
     const onScroll = useCallback((event: Event) => {
-        setScrollY(window.scrollY);
-        if (window.scrollY < 200) {
+        if (window.scrollY < 600) {
             setSelectedLink('home');
+        } else if (window.scrollY >= 600 && window.scrollY < 1200) {
+            setSelectedLink('about');
         }
     }, []);
 

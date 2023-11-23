@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import Title from './Misc';
 
 export default function About() {
     const paragraphs = [
@@ -10,9 +11,7 @@ export default function About() {
 
     return (
         <div id="about" className="px-15">
-            <div className="w-full flex justify-center py-14">
-                <h1 className="text-7xl font-extrabold text-shadow-pink-red">About Me</h1>
-            </div>
+            <Title title="About Me" />
             <div className="px-12 flex flex-row mt-5">
                 <div className="px-5 mt-5 pe-10">
                     {paragraphs.map((para, index) => {
@@ -20,8 +19,11 @@ export default function About() {
                     })}
                 </div>
                 <div className="m-5">
-                    <img src="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+photo.jpeg" alt="Jainam Doshi" className="rounded-xl shadow-lg" />
+                    <img src="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+photo.jpeg" alt="Jainam Doshi" className="rounded-xl" />
                 </div>
+            </div>
+            <div>
+                
             </div>
         </div>
     );
