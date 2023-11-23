@@ -12,6 +12,7 @@ export default function Header() {
     const [scrollY, setScrollY] = useState(0);
 
     const onScroll = useCallback((event: Event) => {
+        setScrollY(window.scrollY);
         if (window.scrollY < 600) {
             setSelectedLink('home');
         } else if (window.scrollY >= 600 && window.scrollY < 1200) {
@@ -29,7 +30,7 @@ export default function Header() {
 
 
     return (
-        <header className={`${scrollY < 40 ? "bg-transparent" : "bg-[#131313]"} sticky top-0 w-full flex flex-row justify-between pt-5 z-50 duration-200`}>
+        <header className={`${scrollY < 70 ? "bg-transparent" : "bg-[#131313]"} sticky top-0 w-full flex flex-row justify-between pt-5 z-50 duration-500`}>
             <div className="w-2/5 to-left">
                 <ul className="flex justify-between items-center py-4 px-12">
                     <NavLink label="Home" selected={selectedLink == 'home'} action={setSelectedLink} />

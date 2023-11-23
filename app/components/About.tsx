@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import Title from './Misc';
+import { Tab, TabNav } from './Tab';
 
 export default function About() {
     const paragraphs = [
@@ -22,8 +23,12 @@ export default function About() {
                     <img src="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+photo.jpeg" alt="Jainam Doshi" className="rounded-xl" />
                 </div>
             </div>
-            <div>
-                
+            <div className="py-5 px-16 pt-[6rem]">
+                <TabNav>
+                    <Tab title="Experience">Experience Body</Tab>
+                    <Tab title="Education">Education Body</Tab>
+                    <Tab title="Awards & Certifications">Awards & Certifications</Tab>
+                </TabNav>
             </div>
         </div>
     );
@@ -34,5 +39,5 @@ type AboutMeParaProps = {
 };
 
 const AboutMePara: FC<AboutMeParaProps> = (props) => {
-return <p className="pb-5 font-light text-grey text-md text-justify">{props.children}</p>;
+    return <p className="pb-5 font-light text-grey text-md text-justify">{props.children}</p>;
 };
