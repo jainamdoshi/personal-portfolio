@@ -15,6 +15,7 @@ const config: Config = {
             },
             colors: {
                 'pink-red': '#f5004e',
+                'pink-red-light': '#f61a60',
                 grey: 'rgba(198,201,216, 0.75)',
             },
             textShadow: {

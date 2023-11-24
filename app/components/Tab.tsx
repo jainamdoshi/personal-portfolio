@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { Children, ReactNode, isValidElement, useState } from 'react';
 
 type TabNavProps = {
     children?: ReactNode;
@@ -8,8 +8,9 @@ type TabNavProps = {
 
 export function TabNav(props: TabNavProps) {
     const children = props.children as ReactNode[];
-    const tabs = children.map((child: any) => {
+    const tabs: {type: any, title: string, body: ReactNode}[] = Children.map(children, (child: any, index) => {
         return {
+            type: child.type,
             title: child.props.title,
             body: child.props.children,
         };
@@ -18,8 +19,8 @@ export function TabNav(props: TabNavProps) {
     const [activeTab, setActiveTab] = useState(tabs[0].title);
 
     return (
-        <div className="px-4">
-            <div className="flex flex-row justify-evenly px-10">
+        <div className="px-20">
+            <div className="flex flex-row justify-between">
                 {tabs.map((tab) => {
                     return (
                         <div key={tab.title} className="px-5 py-2">
@@ -37,9 +38,9 @@ export function TabNav(props: TabNavProps) {
             <div className="mt-10 py-5">
                 {tabs.map((tab) => {
                     return (
-                        <div key={tab.title} className={`${activeTab == tab.title ? '' : 'hidden'}`}>
+                        <tab.type key={tab.title} title={tab.title} hidden={activeTab != tab.title}>
                             {tab.body}
-                        </div>
+                        </tab.type>
                     );
                 })}
             </div>
@@ -50,8 +51,9 @@ export function TabNav(props: TabNavProps) {
 type TabProps = {
     children?: ReactNode;
     title: string;
+    hidden?: boolean;
 };
 
 export function Tab(props: TabProps) {
-    return <div>{props.children}</div>;
+    return <div className={`ml-6 ${props.hidden ? 'hidden' : ''}`}>{props.children}</div>;
 }
