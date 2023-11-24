@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
 import Title from './Misc';
 import { Tab, TabNav } from './Tab';
+import { TimeLine, TimeLineItem } from './Timeline';
 
 export default function About() {
     const paragraphs = [
@@ -25,8 +26,47 @@ export default function About() {
             </div>
             <div className="py-5 px-16 pt-[6rem]">
                 <TabNav>
-                    <Tab title="Experience">Experience Body</Tab>
-                    <Tab title="Education">Education Body</Tab>
+                    <Tab title="Experience">
+                        <TimeLine>
+                            <TimeLineItem title="Lead Developer" company="Eventivity" date="Jul 2023 - Nov 2023" empType="Contract">
+                                <p>
+                                    Collaborated closely with the client to redesign and enhance the web application, ensuring a robust and scalable infrastructure suitable for
+                                    extensive, multi-page functionality.
+                                </p>
+                                <p>
+                                    Developed RESTful APIs with a focus on maintainability and futureproofing, utilizing Express.js and Firebase, laying the groundwork for
+                                    potential expansion into mobile platforms.
+                                </p>
+                                <p>Seamlessly integrated these APIs with the Next.js framework to establish a responsive and efficient client-server relationship.</p>
+                                <p>
+                                    Fostered a dynamic and agile development environment by embracing the Agile Scrum methodology, promoting collaboration and adaptive planning
+                                    within the team.
+                                </p>
+                            </TimeLineItem>
+                            <TimeLineItem title="IT Developer" company="Cadre Capital Partners (CCP)" date="Mar 2023 - Nov 2023" empType="Part-Time">
+                                <p>
+                                    Following a year of notable success in my internship at CPP, I was offered and accepted a permanent position at CCP. Balancing my professional
+                                    commitments with academic pursuits, I continued to work part-time while completing my studies at RMIT.
+                                </p>
+                                <p>
+                                    I contributed to the training and collaboration with new team members, which led to a significant improvement in the business's efficiency and
+                                    overall effectiveness.
+                                </p>
+                            </TimeLineItem>
+                            <TimeLineItem title="IT Developer Intern" company="Cadre Capital Partners (CCP)" date="Jan 2022 - Dec 2022" empType="Full-Time">
+                                <p>
+                                    Engineered a customized file system within Microsoft SharePoint using JavaScript, to automatically organize compliance documents, enhancing
+                                    retrieval and data governance by leveraging document metadata and client information.
+                                </p>
+                                <p>
+                                    Employed advanced web scraping techniques to aggregate data and facilitate its integration with various CRM systems via API connections,
+                                    optimizing data flow processes and reinforcing the company's data-centric business model.
+                                </p>
+                                <p>Developed and sustained automated solutions with PowerShell scripting, significantly improving workflow for advisors.</p>
+                            </TimeLineItem>
+                        </TimeLine>
+                    </Tab>
+                    <Tab title="Education"></Tab>
                     <Tab title="Awards & Certifications">Awards & Certifications</Tab>
                 </TabNav>
             </div>
