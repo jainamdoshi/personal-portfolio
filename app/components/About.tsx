@@ -66,8 +66,38 @@ export default function About() {
                             </TimeLineItem>
                         </TimeLine>
                     </Tab>
-                    <Tab title="Education"></Tab>
-                    <Tab title="Awards & Certifications">Awards & Certifications</Tab>
+                    <Tab title="Education">
+                        <TimeLine>
+                            <TimeLineItem
+                                title="Bachelor's of Software Engineering at RMIT"
+                                company="Melbourne, Australia"
+                                date="Feb 2020 - Dec 2023"
+                                empType="GPA 3.8"
+                            ></TimeLineItem>
+                            <TimeLineItem
+                                title="International Baccalaureate at Victoria International School of Sharjah"
+                                company="Sharjah, United Arab Emirates"
+                                date="2014 - 2019"
+                                empType="GPA 3.8"
+                            ></TimeLineItem>
+                        </TimeLine>
+                    </Tab>
+                    <Tab title="Awards & Certifications">
+                        <TimeLine>
+                            <TimeLineItem title="Certified Cloud Practitioner" company="Amazon Web Services" date="Nov 2020" empType="Certification"></TimeLineItem>
+                            <TimeLineItem title="JavaScript Algorithms and Data Structures" company="FreeCodeCamp" date="Nov 2020" empType="Certification"></TimeLineItem>
+                            <TimeLineItem title="Java Programming: Arrays, Lists, and Structured Data" company="Coursera" date="Aug 2019" empType="Certification"></TimeLineItem>
+                            <TimeLineItem title="Java Programming: Solving Problems with Software" company="Coursera" date="July 2019" empType="Certification"></TimeLineItem>
+                            <TimeLineItem title="Mathematical Thinking in Computer Science" company="Coursera" date="June 2019" empType="Certification"></TimeLineItem>
+                            <TimeLineItem title="World Education Robot Contest" company="Sharjah, United Arab Emirates" date="2017 - 2018" empType="Award">
+                                <p>
+                                    Spearheaded team representation for UAE in the international robotics competition in Shanghai, engineering a LEGO Mindstorms robot with advanced
+                                    sensor integration for precise line following and task execution
+                                </p>
+                                <p>Secured the "The Performance Team" Award for exceptional robot performance and teamwork.</p>
+                            </TimeLineItem>
+                        </TimeLine>
+                    </Tab>
                 </TabNav>
             </div>
         </div>
