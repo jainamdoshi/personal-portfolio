@@ -21,6 +21,15 @@ const config: Config = {
             textShadow: {
                 'pink-red': '-0.15rem 0.15rem 0.15rem #f5004e',
             },
+            keyframes: {
+                scale: {
+                    '0%': { transform: 'scale(1)' },
+                    '100%': { transform: 'scale(1.1)' },
+                },
+            },
+            animation: {
+                scale: 'scale 1s ease-in-out infinite alternate',
+            },
         },
     },
     plugins: [
