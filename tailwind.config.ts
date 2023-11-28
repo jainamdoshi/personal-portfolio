@@ -20,6 +20,7 @@ const config: Config = {
             },
             textShadow: {
                 'pink-red': '-0.15rem 0.15rem 0.15rem #f5004e',
+                black: '0.1rem 0.1rem 0.65rem #000',
             },
             keyframes: {
                 scale: {
@@ -29,6 +30,9 @@ const config: Config = {
             },
             animation: {
                 scale: 'scale 1s ease-in-out infinite alternate',
+            },
+            boxShadow: {
+                'pink-red': '0.35rem 0.15rem 1.25rem #f5004e',
             },
         },
     },
