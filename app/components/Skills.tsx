@@ -4,7 +4,7 @@ import { IconType } from 'react-icons';
 import Card from './Card';
 import Title from './Misc';
 import { SiJavascript, SiRuby, SiSpring, SiRubyonrails, SiChakraui, SiTailwindcss, SiApachemaven, SiMicrobit, SiFirebase, SiGnubash, SiJupyter } from 'react-icons/si';
-import { FaJava, FaPython, FaHtml5, FaCss3, FaReact, FaNode, FaBootstrap, FaGitAlt, FaGithub, FaAws, FaFigma } from 'react-icons/fa';
+import { FaJava, FaPython, FaHtml5, FaCss3, FaReact, FaNode, FaBootstrap, FaGitAlt, FaGithub, FaAws, FaFigma, FaNpm } from 'react-icons/fa';
 import { TbBrandCpp, TbSql, TbBrandNextjs, TbBrandMysql, TbBrandVscode } from 'react-icons/tb';
 import { DiSwift, DiProlog } from 'react-icons/di';
 import { BiLogoTypescript } from 'react-icons/bi';
@@ -53,6 +53,7 @@ export default function Skills() {
         { icon: TbBrandMysql, name: 'MySQL' },
         { icon: FaAws, name: 'AWS' },
         { icon: SiFirebase, name: 'Firebase' },
+        { icon: FaNpm, name: 'NPM' },
         { icon: FaFigma, name: 'Figma' },
         { icon: TbBrandVscode, name: 'VSCode', size: 4.5 },
     ];
