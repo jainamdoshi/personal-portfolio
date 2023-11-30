@@ -7,6 +7,7 @@ import { SiJavascript, SiRuby, SiSpring, SiRubyonrails, SiChakraui, SiTailwindcs
 import { FaJava, FaPython, FaHtml5, FaCss3, FaReact, FaNode, FaBootstrap, FaGitAlt, FaGithub, FaAws, FaFigma } from 'react-icons/fa';
 import { TbBrandCpp, TbSql, TbBrandNextjs, TbBrandMysql, TbBrandVscode } from 'react-icons/tb';
 import { DiSwift, DiProlog } from 'react-icons/di';
+import { BiLogoTypescript } from 'react-icons/bi';
 
 export default function Skills() {
     type CardItem = {
@@ -17,11 +18,12 @@ export default function Skills() {
 
     const languages: CardItem[] = [
         { icon: SiJavascript, name: 'JavaScript', size: 3.75 },
+        { icon: BiLogoTypescript, name: 'TypeScript', size: 5.25 },
         { icon: FaJava, name: 'Java', size: 4.25 },
         { icon: FaPython, name: 'Python' },
         { icon: TbSql, name: 'SQL', size: 4.5 },
-        { icon: SiRuby, name: 'Ruby', size: 3 },
         { icon: DiProlog, name: 'Prolog' },
+        { icon: SiRuby, name: 'Ruby', size: 3 },
         { icon: DiSwift, name: 'Swift', size: 4.5 },
         { icon: TbBrandCpp, name: 'C++' },
         { icon: FaHtml5, name: 'HTML' },
@@ -40,16 +42,16 @@ export default function Skills() {
     ];
 
     const technologies: CardItem[] = [
-        { icon: SiApachemaven, name: 'Maven' },
-        { icon: SiMicrobit, name: 'Microbit' },
-        { icon: SiGnubash, name: 'Bash' },
         { icon: FaGitAlt, name: 'Git' },
+        { icon: SiGnubash, name: 'Bash' },
+        { icon: SiApachemaven, name: 'Maven' },
         { icon: SiJupyter, name: 'Jupyter' },
+        { icon: SiMicrobit, name: 'Microbit' },
     ];
     const tools: CardItem[] = [
         { icon: FaGithub, name: 'GitHub' },
-        { icon: FaAws, name: 'AWS' },
         { icon: TbBrandMysql, name: 'MySQL' },
+        { icon: FaAws, name: 'AWS' },
         { icon: SiFirebase, name: 'Firebase' },
         { icon: FaFigma, name: 'Figma' },
         { icon: TbBrandVscode, name: 'VSCode', size: 4.5 },
