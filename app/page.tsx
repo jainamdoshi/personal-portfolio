@@ -2,6 +2,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Header from './components/Header';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 
 export default function App() {
     return (
@@ -11,6 +12,7 @@ export default function App() {
                 <Home />
                 <About />
                 <Skills />
+                <Projects />
             </main>
         </div>
     );
