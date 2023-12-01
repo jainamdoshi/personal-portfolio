@@ -63,7 +63,7 @@ const InnerLink = forwardRef<HTMLAnchorElement, InnerLinkProps>((props, ref) => 
     return (
         <li>
             <div className="flex flex-col">
-                <a ref={ref} onClick={props.onClick} className="hover:text-pink-red font-semibold text-2xl duration-200">
+                <a ref={ref} onClick={props.onClick} className="hover:text-pink-red font-semibold text-2xl md:text-xl duration-200">
                     {props.label}
                 </a>
                 <span className={`w-full bg-pink-red h-1 mt-3 ${props.selected ? 'visible' : 'invisible'}`}></span>
@@ -94,7 +94,7 @@ type MediaLinkProps = {
 const MediaLink: FC<MediaLinkProps> = (props) => {
     return (
         <a href={props.href} target="_blank" rel="noopener noreferrer" className="hover:text-pink-red duration-200">
-            <props.icon className="w-7 h-7" />
+            <props.icon size={'1.85rem'} />
         </a>
     );
 };

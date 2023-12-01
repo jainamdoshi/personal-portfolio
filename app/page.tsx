@@ -13,6 +13,7 @@ const projects: ProjectProps[] = [
         description: 'A personal portfolio webpage which showcases my education, skills, achievements, certifications, and projects',
         coverImage: 'https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/personal-portfolio-coverimage.png',
         url: 'https://github.com/jainamdoshi/personal-portfolio.git',
+        tags: ['TypeScript', 'NextJS', 'TailwindCSS'],
     },
 ];
 
