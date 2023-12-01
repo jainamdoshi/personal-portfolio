@@ -22,6 +22,7 @@ export default function Header() {
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll, { passive: true });
+        setScrollY(window.scrollY);
         
         return () => {
             window.removeEventListener('scroll', onScroll);

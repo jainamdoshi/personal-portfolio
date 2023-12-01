@@ -29,7 +29,7 @@ const config: Config = {
                 },
             },
             animation: {
-                scale: 'scale 1s ease-in-out infinite alternate',
+                scale: 'scale 1.5s ease-in-out infinite alternate',
             },
             boxShadow: {
                 'pink-red': '0.35rem 0.15rem 1.25rem #f5004e',
