@@ -3,8 +3,8 @@
 import { IconType } from 'react-icons';
 import Card from './Card';
 import Title from './Misc';
-import { SiJavascript, SiRuby, SiSpring, SiRubyonrails, SiChakraui, SiTailwindcss, SiApachemaven, SiMicrobit, SiFirebase, SiGnubash, SiJupyter } from 'react-icons/si';
-import { FaJava, FaPython, FaHtml5, FaCss3, FaReact, FaNode, FaBootstrap, FaGitAlt, FaGithub, FaAws, FaFigma, FaNpm } from 'react-icons/fa';
+import { SiJavascript, SiRuby, SiSpring, SiRubyonrails, SiChakraui, SiTailwindcss, SiApachemaven, SiMicrobit, SiFirebase, SiGnubash, SiJupyter, SiHeroku } from 'react-icons/si';
+import { FaJava, FaPython, FaHtml5, FaCss3, FaReact, FaNode, FaBootstrap, FaGitAlt, FaGithub, FaAws, FaFigma, FaNpm, FaSass } from 'react-icons/fa';
 import { TbBrandCpp, TbSql, TbBrandNextjs, TbBrandMysql, TbBrandVscode } from 'react-icons/tb';
 import { DiSwift, DiProlog } from 'react-icons/di';
 import { BiLogoTypescript } from 'react-icons/bi';
@@ -38,6 +38,7 @@ export default function Skills() {
         { icon: SiChakraui, name: 'Chakra UI', size: 3.85 },
         { icon: SiTailwindcss, name: 'Tailwind', size: 4.25 },
         { icon: FaBootstrap, name: 'Bootstrap' },
+        { icon: FaSass, name: 'SASS' },
         { icon: SiRubyonrails, name: 'Rails', size: 4.5 },
     ];
 
@@ -56,6 +57,7 @@ export default function Skills() {
         { icon: FaNpm, name: 'NPM' },
         { icon: FaFigma, name: 'Figma' },
         { icon: TbBrandVscode, name: 'VSCode', size: 4.5 },
+        { icon: SiHeroku, name: 'Heroku' },
     ];
 
     return (
