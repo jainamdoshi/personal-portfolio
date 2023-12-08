@@ -24,7 +24,7 @@ export default function Skills() {
         { icon: TbSql, name: 'SQL', size: 4.5 },
         { icon: DiProlog, name: 'Prolog' },
         { icon: SiRuby, name: 'Ruby', size: 3 },
-        { icon: DiSwift, name: 'Swift', size: 4.5 },
+        { icon: DiSwift, name: 'Swift', size: 4.75 },
         { icon: TbBrandCpp, name: 'C++' },
         { icon: FaHtml5, name: 'HTML' },
         { icon: FaCss3, name: 'CSS', size: 3.5 },
@@ -54,10 +54,10 @@ export default function Skills() {
         { icon: TbBrandMysql, name: 'MySQL' },
         { icon: FaAws, name: 'AWS' },
         { icon: SiFirebase, name: 'Firebase' },
-        { icon: FaNpm, name: 'NPM' },
+        { icon: FaNpm, name: 'NPM', size: 4.75 },
         { icon: FaFigma, name: 'Figma' },
         { icon: TbBrandVscode, name: 'VSCode', size: 4.5 },
-        { icon: SiHeroku, name: 'Heroku' },
+        { icon: SiHeroku, name: 'Heroku', size: 3.75 },
     ];
 
     return (
