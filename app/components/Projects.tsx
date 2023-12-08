@@ -17,7 +17,7 @@ export default function Projects(props: { projects: ProjectProps[] }) {
             <div className="flex flow-row justify-around my-10 px-16 flex-wrap">
                 {props.projects.map((project) => {
                     return (
-                        <div className="w-[25rem] h-[20rem] my-3">
+                        <div className="w-[20rem] my-3">
                             <div key={project.title} className="group bg-pink-red rounded-2xl overflow-hidden h-[15rem] relative">
                                 <img src={project.coverImage} alt={project.title} className="h-full w-full" />
                                 <h3 className="absolute bottom-0 text-white font-extrabold text-lg p-3 w-full text-center text-shadow-black">{project.title}</h3>
