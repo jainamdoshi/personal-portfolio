@@ -7,7 +7,7 @@ export default function Home() {
                 <div className="text-left space-y-5 px-12 pt-5">
                     <span className="text-grey uppercase text-3xl tracking-wide font-semibold">Welcome to my World</span>
                     <h1 className="text-7xl font-normal">
-                        Hi, I'm
+                        {"Hi, I'm"}
                         <span className="font-semibold"> Jainam Doshi</span>
                         <br />
                     </h1>

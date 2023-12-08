@@ -71,6 +71,7 @@ const InnerLink = forwardRef<HTMLAnchorElement, InnerLinkProps>((props, ref) => 
         </li>
     );
 });
+InnerLink.displayName = 'InnerLink';
 
 type NavLinkProps = {
     label: string;

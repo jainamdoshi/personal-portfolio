@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 import Title from './Misc';
 import { Tab, TabNav } from './Tab';
 import { TimeLine, TimeLineItem } from './Timeline';
+import Image from 'next/image';
 
 export default function About() {
     const paragraphs = [
@@ -21,7 +22,7 @@ export default function About() {
                     })}
                 </div>
                 <div className="m-5">
-                    <img src="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+photo.jpeg" alt="Jainam Doshi" className="rounded-xl" />
+                    <Image src="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+photo.jpeg" alt="Jainam Doshi" className="rounded-xl" />
                 </div>
             </div>
             <div className="py-5 px-16 pt-[6rem]">
@@ -49,8 +50,9 @@ export default function About() {
                                     commitments with academic pursuits, I continued to work part-time while completing my studies at RMIT.
                                 </p>
                                 <p>
-                                    I contributed to the training and collaboration with new team members, which led to a significant improvement in the business's efficiency and
-                                    overall effectiveness.
+                                    {
+                                        "I contributed to the training and collaboration with new team members, which led to a significant improvement in the business's efficiency and overall effectiveness."
+                                    }
                                 </p>
                             </TimeLineItem>
                             <TimeLineItem title="IT Developer Intern" company="Cadre Capital Partners (CCP)" date="Jan 2022 - Dec 2022" empType="Full-Time">
@@ -59,8 +61,9 @@ export default function About() {
                                     retrieval and data governance by leveraging document metadata and client information.
                                 </p>
                                 <p>
-                                    Employed advanced web scraping techniques to aggregate data and facilitate its integration with various CRM systems via API connections,
-                                    optimizing data flow processes and reinforcing the company's data-centric business model.
+                                    {
+                                        "Employed advanced web scraping techniques to aggregate data and facilitate its integration with various CRM systems via API connections, optimizing data flow processes and reinforcing the company's data-centric business model."
+                                    }
                                 </p>
                                 <p>Developed and sustained automated solutions with PowerShell scripting, significantly improving workflow for advisors.</p>
                             </TimeLineItem>
@@ -94,7 +97,7 @@ export default function About() {
                                     Spearheaded team representation for UAE in the international robotics competition in Shanghai, engineering a LEGO Mindstorms robot with advanced
                                     sensor integration for precise line following and task execution
                                 </p>
-                                <p>Secured the "The Performance Team" Award for exceptional robot performance and teamwork.</p>
+                                <p>{'Secured the "The Performance Team" Award for exceptional robot performance and teamwork.'}</p>
                             </TimeLineItem>
                         </TimeLine>
                     </Tab>
