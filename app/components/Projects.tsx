@@ -20,7 +20,7 @@ export default function Projects(props: { projects: ProjectProps[] }) {
                     return (
                         <div key={project.title} className="w-[20rem] my-3">
                             <div key={project.title} className="group bg-pink-red rounded-2xl overflow-hidden h-[15rem] relative">
-                                <Image src={project.coverImage} alt={project.title} className="h-full w-full" />
+                                <Image src={project.coverImage} alt={project.title} className="h-full w-full" width={0} height={0}/>
                                 <h3 className="absolute bottom-0 text-white font-extrabold text-lg p-3 w-full text-center text-shadow-black">{project.title}</h3>
                                 <div className="absolute top-0 left-0 w-full h-full bg-pink-red flex flex-col items-center scale-0 group-hover:scale-100 justify-between py-5 px-3">
                                     <h4 className="text-white font-extrabold text-3xl text-center">{project.subTitle}</h4>
