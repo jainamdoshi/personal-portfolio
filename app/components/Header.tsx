@@ -5,7 +5,7 @@ import { FC, forwardRef, MouseEventHandler, useCallback, useEffect, useState } f
 import { IconType } from 'react-icons';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
-import { GrDocumentPdf } from "react-icons/gr";
+import { GrDocumentPdf } from 'react-icons/gr';
 
 export default function Header() {
     const [selectedLink, setSelectedLink] = useState('home');
@@ -13,9 +13,14 @@ export default function Header() {
 
     const onScroll = useCallback((event: Event) => {
         setScrollY(window.scrollY);
+        console.log(window.scrollY);
         if (window.scrollY < 600) {
             setSelectedLink('home');
-        } else if (window.scrollY >= 600 && window.scrollY < 1200) {
+        } else if (window.scrollY >= 600 && window.scrollY < 1700) {
+            setSelectedLink('skills');
+        } else if (window.scrollY >= 1700 && window.scrollY < 3450) {
+            setSelectedLink('projects');
+        } else {
             setSelectedLink('about');
         }
     }, []);
@@ -23,15 +28,14 @@ export default function Header() {
     useEffect(() => {
         window.addEventListener('scroll', onScroll, { passive: true });
         setScrollY(window.scrollY);
-        
+
         return () => {
             window.removeEventListener('scroll', onScroll);
         };
     }, [onScroll]);
 
-
     return (
-        <header className={`${scrollY < 70 ? "bg-transparent" : "bg-[#131313]"} sticky top-0 w-full flex flex-row justify-between pt-5 z-50 duration-500`}>
+        <header className={`${scrollY < 70 ? 'bg-transparent' : 'bg-[#131313]'} sticky top-0 w-full flex flex-row justify-between pt-5 z-50 duration-500`}>
             <div className="w-2/5 to-left">
                 <ul className="flex justify-between items-center py-4 px-12">
                     <NavLink label="Home" selected={selectedLink == 'home'} action={setSelectedLink} />
