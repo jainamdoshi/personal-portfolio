@@ -35,10 +35,9 @@ export default function Header() {
             <div className="w-2/5 to-left">
                 <ul className="flex justify-between items-center py-4 px-12">
                     <NavLink label="Home" selected={selectedLink == 'home'} action={setSelectedLink} />
-                    <NavLink label="About" selected={selectedLink == 'about'} action={setSelectedLink} />
                     <NavLink label="Skills" selected={selectedLink == 'skills'} action={setSelectedLink} />
                     <NavLink label="Projects" selected={selectedLink == 'projects'} action={setSelectedLink} />
-                    <NavLink label="Contact" selected={selectedLink == 'contact'} action={setSelectedLink} />
+                    <NavLink label="About" selected={selectedLink == 'about'} action={setSelectedLink} />
                 </ul>
             </div>
             <div className="w-1/4 to-right">
