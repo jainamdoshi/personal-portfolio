@@ -22,7 +22,7 @@ export default function About() {
                     })}
                 </div>
                 <div className="m-5">
-                    <Image src="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+photo.jpeg" alt="Jainam Doshi" className="rounded-xl" width={2500} height={7500}/>
+                    <Image src="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Photo.jpg" alt="Jainam Doshi" className="rounded-xl" width={2500} height={7500}/>
                 </div>
             </div>
             <div className="py-5 px-16 pt-[6rem]">

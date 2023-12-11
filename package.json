@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && aws s3 sync out/ s3://jainam-personal-portfolio --delete",
+    "deploy": "next build && aws s3 sync out/ s3://jainamdoshi.com --delete",
     "lint": "next lint"
   },
   "dependencies": {
