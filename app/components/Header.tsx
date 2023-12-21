@@ -48,7 +48,12 @@ export default function Header() {
                     <MediaLink icon={FaLinkedinIn} href="https://www.linkedin.com/in/jamdos" />
                     <MediaLink icon={FaGithub} href="https://github.com/jainamdoshi" />
                     <MediaLink icon={MdEmail} href="mailto:jainam.doshi2001@gmail.com" />
-                    <MediaLink icon={GrDocumentPdf} href="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Doshi+Resume.pdf" />
+                    <Link
+                        href="https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Doshi+Resume.pdf"
+                        className="text-lg rounded-lg font-semibold px-4 duration-200 bg-pink-red hover:bg-white hover:text-pink-red py-[0.1rem]"
+                    >
+                        Resume
+                    </Link>
                 </ul>
             </div>
         </header>
