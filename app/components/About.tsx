@@ -78,11 +78,15 @@ export default function About() {
                                 empType="GPA 3.8"
                             ></TimeLineItem>
                             <TimeLineItem
-                                title="International Baccalaureate at Victoria International School of Sharjah"
+                                title="Victoria International School of Sharjah"
                                 company="Sharjah, United Arab Emirates"
                                 date="2014 - 2019"
                                 empType="GPA 3.8"
-                            ></TimeLineItem>
+                            >
+                                <p>
+                                    Studied the International Baccalaureate Diploma Programme, a rigorous and comprehensive curriculum that emphasizes critical thinking
+                                </p>
+                            </TimeLineItem>
                         </TimeLine>
                     </Tab>
                     <Tab title="Awards & Certifications">
@@ -112,5 +116,5 @@ type AboutMeParaProps = {
 };
 
 const AboutMePara: FC<AboutMeParaProps> = (props) => {
-    return <p className="pb-5 font-light text-grey text-md text-justify">{props.children}</p>;
+    return <p className="pb-5 text-grey text-lg text-justify">{props.children}</p>;
 };

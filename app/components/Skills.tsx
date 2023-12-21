@@ -61,7 +61,7 @@ export default function Skills() {
     ];
 
     return (
-        <div id="skills" className="px-15 py-3 bg-black">
+        <div id="skills" className="px-15 py-3 mb-6">
             <Title title="Skills" />
             <div className="px-10">
                 <Card title="Languages" description="I know" icons={languages} />

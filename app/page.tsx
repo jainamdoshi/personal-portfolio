@@ -18,7 +18,7 @@ const projects: ProjectProps[] = [
     {
         title: 'Pacman Game AI',
         subTitle: 'Artificial Intelligence',
-        description: 'Applying various AI techniques such as search, adversarial search, reinforcement learning, and bayesian networks to the game of Pacman',
+        description: 'Applying various AI techniques such as search, reinforcement learning, and bayesian networks to the game of Pacman',
         coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSntz4baDJfyK1oIlc7bTqisO6JcE4OWtdCkQ&usqp=CAU',
         url: 'https://github.com/jainamdoshi/pacman-AI.git',
         tags: ['Python', 'Artificial Intelligence', 'Search', 'Multi-Agent', 'Reinforcement Learning', 'Bayesian Networks'],

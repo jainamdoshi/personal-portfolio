@@ -13,7 +13,7 @@ export type ProjectProps = {
 
 export default function Projects(props: { projects: ProjectProps[] }) {
     return (
-        <div id="projects" className="px-15">
+        <div id="projects" className="px-15 bg-black pb-4">
             <Title title="Projects" />
             <div className="flex flow-row justify-around my-10 px-16 flex-wrap">
                 {props.projects.map((project) => {
@@ -23,8 +23,8 @@ export default function Projects(props: { projects: ProjectProps[] }) {
                                 <Image src={project.coverImage} alt={project.title} className="h-full w-full" width={0} height={0} />
                                 <h3 className="absolute bottom-0 text-white font-extrabold text-lg p-3 w-full text-center text-shadow-black">{project.title}</h3>
                                 <div className="absolute top-0 left-0 w-full h-full bg-pink-red flex flex-col items-center scale-0 group-hover:scale-100 justify-between py-5 px-3">
-                                    <h4 className="text-white font-extrabold text-3xl text-center">{project.subTitle}</h4>
-                                    <p className="text-white font-normal text-md text-center">{project.description}</p>
+                                    <h4 className="text-white font-extrabold text-2xl text-center">{project.subTitle}</h4>
+                                    <p className="text-white font-light text-md text-center">{project.description}</p>
                                     <Link
                                         href={`${project.url}`}
                                         rel="noopener noreferrer"

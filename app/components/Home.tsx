@@ -12,7 +12,7 @@ export default function Home() {
                         <br />
                     </h1>
                     <Occupation />
-                    <h2 className="font-semibold font-normal text-2xl">based in Melbourne, Australia.</h2>
+                    <h2 className="font-semibold font-normal text-2xl">based in Australia.</h2>
                 </div>
             </div>
         </div>
