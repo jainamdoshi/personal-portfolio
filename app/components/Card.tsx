@@ -16,7 +16,7 @@ export default function Card(props: CardProps) {
                     <h3 className="text-3xl font-bold pb-2 text-shadow-black">{props.title}</h3>
                     <p className="text-2xl font-semibold text-shadow-black">{props.description}</p>
                 </div>
-                <div className="w-3/4 bg-white flex items-center justify-center flex-wrap w-full px-2 space-x-2 py-2">
+                <div className="w-3/4 bg-white flex items-center justify-center flex-wrap px-2 space-x-2 py-2">
                     {props.icons.map((icon) => {
                         return (
                             <div key={icon.name} className="group flex flex-row text-black items-center w-[5rem] h-[5rem] relative justify-center">
