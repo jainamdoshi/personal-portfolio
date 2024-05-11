@@ -110,15 +110,20 @@ export default function Header() {
 					</div>
 				</NavigationMenuList>
 				<NavigationMenuList asChild>
-					<div className='flex flex-row justify-between content-start pr-2'>
+					<div className='flex flex-row justify-between content-start pr-2 md:gap-4 gap-2'>
 						{links.mediaLinks.map((item, index) => (
 							<MediaLink key={index} item={item} />
 						))}
 						<Link
 							href='https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Doshi+Resume.pdf'
-							className='text-lg rounded-lg font-semibold px-3 duration-200 bg-pink-red hover:bg-white hover:text-pink-red py-[0.1rem]'
+							target='_blank'
+							rel='noopener noreferrer'
+							legacyBehavior
+							passHref
 						>
-							Resume
+							<NavigationMenuLink className='ml-2 text-lg rounded-lg font-semibold px-3 duration-200 bg-pink-red hover:bg-white hover:text-pink-red py-[0.1rem]'>
+								Resume
+							</NavigationMenuLink>
 						</Link>
 					</div>
 				</NavigationMenuList>
@@ -154,6 +159,7 @@ const MediaLink: FC<{ item: MediaLink }> = ({ item }) => {
 			<Link
 				href={item.href}
 				passHref
+				legacyBehavior
 				target='_blank'
 				rel='noopener noreferrer'
 				className='px-1 hover:text-pink-red duration-200'
