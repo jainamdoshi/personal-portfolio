@@ -13,7 +13,7 @@ export default function About() {
 	];
 
 	return (
-		<div id='about' className='px-15'>
+		<div id='about-me' className='px-15'>
 			<Title title='About Me' />
 			<div className='px-12 flex flex-row mt-5'>
 				<div className='px-5 mt-5 pe-10'>

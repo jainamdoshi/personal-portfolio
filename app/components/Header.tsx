@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FC, useCallback, useEffect, useState } from 'react';
 import { IconType } from 'react-icons';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdEmail } from 'react-icons/md';
 
 import {
@@ -13,6 +14,7 @@ import {
 	NavigationMenuList,
 	navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 type NavLink = {
 	label: string;
@@ -64,22 +66,31 @@ const links: Links = {
 	]
 };
 
-export default function Header() {
-	const [activeItem, setActiveItem] = useState<NavLink>(links.navLinks[0]);
-	const [scrollY, setScrollY] = useState(0);
+type MenuProps = {
+	activeItem: NavLink;
+	setActiveItem: (item: NavLink) => void;
+};
 
-	const onScroll = useCallback((event: Event) => {
-		setScrollY(window.scrollY);
-		if (window.scrollY < 550) {
-			setActiveItem(links.navLinks[0]);
-		} else if (window.scrollY >= 550 && window.scrollY < 1350) {
-			setActiveItem(links.navLinks[1]);
-		} else if (window.scrollY >= 1350 && window.scrollY < 3100) {
-			setActiveItem(links.navLinks[2]);
-		} else {
-			setActiveItem(links.navLinks[3]);
-		}
-	}, []);
+export default function Header() {
+	const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+	const [activeItem, setActiveItem] = useState<NavLink>(links.navLinks[0]);
+	const [scrollY, setScrollY] = useState<number>(0);
+
+	const onScroll = useCallback(
+		(_: Event) => {
+			setScrollY(window.scrollY);
+			if (window.scrollY < 550) {
+				setActiveItem(links.navLinks[0]);
+			} else if (window.scrollY >= 550 && window.scrollY < 1350) {
+				setActiveItem(links.navLinks[1]);
+			} else if (window.scrollY >= 1350 && window.scrollY < 3100) {
+				setActiveItem(links.navLinks[2]);
+			} else {
+				setActiveItem(links.navLinks[3]);
+			}
+		},
+		[setActiveItem]
+	);
 
 	useEffect(() => {
 		window.addEventListener('scroll', onScroll, { passive: true });
@@ -90,6 +101,91 @@ export default function Header() {
 		};
 	}, [onScroll]);
 
+	useEffect(() => {
+		window.addEventListener('resize', () => {
+			setIsMobile(window.innerWidth < 768);
+		});
+	}, []);
+
+	if (isMobile) {
+		return <SideNav activeItem={activeItem} setActiveItem={setActiveItem} />;
+	}
+
+	return <TopNav activeItem={activeItem} setActiveItem={setActiveItem} />;
+}
+
+const SideNav: FC<MenuProps> = ({ activeItem, setActiveItem }) => {
+	const [open, setOpen] = useState(false);
+
+	return (
+		<Sheet open={open} onOpenChange={setOpen}>
+			<header className='sticky top-0 z-50 flex flex-row-reverse'>
+				<SheetTrigger>
+					<GiHamburgerMenu size={'2rem'} className='m-7' />
+				</SheetTrigger>
+				<SheetContent side='right' className='bg-[#131313] border-0'>
+					<NavigationMenu className='max-w-full py-8 z-1 flex flex-col items-start justify-between h-full'>
+						<NavigationMenuList className='p-5 flex flex-col text-4xl font-semibold text-white gap-10 items-start pt-20'>
+							{links.navLinks.map((item) => (
+								<SideBarNavLink
+									key={item.label}
+									item={item}
+									isActive={item.label == activeItem.label}
+									handleDialog={setOpen}
+									setActiveItem={setActiveItem}
+								/>
+							))}
+						</NavigationMenuList>
+						<div className='flex flex-col w-full gap-5'>
+							<div className='flex flex-row justify-around'>
+								{links.mediaLinks.map((item, index) => (
+									<MediaLink key={index} item={item} />
+								))}
+							</div>
+							<Link
+								href='https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Doshi+Resume.pdf'
+								legacyBehavior
+								passHref
+							>
+								<NavigationMenuLink
+									target='_blank'
+									rel='noopener noreferrer'
+									className='mx-5 text-center items-center text-lg rounded-lg font-semibold duration-200 bg-pink-red hover:bg-white hover:text-pink-red py-[0.1rem]'
+								>
+									Resume
+								</NavigationMenuLink>
+							</Link>
+						</div>
+					</NavigationMenu>
+				</SheetContent>
+			</header>
+		</Sheet>
+	);
+};
+
+const SideBarNavLink: FC<{
+	item: NavLink;
+	isActive: boolean;
+	handleDialog: (state: boolean) => void;
+	setActiveItem: (item: NavLink) => void;
+}> = ({ item, isActive, handleDialog, setActiveItem }) => {
+	const handleClick = () => {
+		handleDialog(false);
+		setActiveItem(item);
+	};
+
+	return (
+		<NavigationMenuItem asChild>
+			<Link href={item.href} passHref onClick={handleClick}>
+				<NavigationMenuLink className={`${isActive ? 'text-pink-red' : 'text-white'}`}>
+					{item.label}
+				</NavigationMenuLink>
+			</Link>
+		</NavigationMenuItem>
+	);
+};
+
+const TopNav: FC<MenuProps> = ({ activeItem, setActiveItem }) => {
 	return (
 		<header
 			className={`${
@@ -116,12 +212,14 @@ export default function Header() {
 						))}
 						<Link
 							href='https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Doshi+Resume.pdf'
-							target='_blank'
-							rel='noopener noreferrer'
 							legacyBehavior
 							passHref
 						>
-							<NavigationMenuLink className='ml-2 text-lg rounded-lg font-semibold px-3 duration-200 bg-pink-red hover:bg-white hover:text-pink-red py-[0.1rem]'>
+							<NavigationMenuLink
+								target='_blank'
+								rel='noopener noreferrer'
+								className='ml-2 text-lg rounded-lg font-semibold px-3 duration-200 bg-pink-red hover:bg-white hover:text-pink-red py-[0.1rem]'
+							>
 								Resume
 							</NavigationMenuLink>
 						</Link>
@@ -130,7 +228,7 @@ export default function Header() {
 			</NavigationMenu>
 		</header>
 	);
-}
+};
 
 const NavLink: FC<{ item: NavLink; isActive: boolean; setActiveItem: (item: NavLink) => void }> = ({
 	item,
