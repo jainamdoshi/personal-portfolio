@@ -69,6 +69,7 @@ const links: Links = {
 type MenuProps = {
 	activeItem: NavLink;
 	setActiveItem: (item: NavLink) => void;
+	scrollY?: number;
 };
 
 export default function Header() {
@@ -185,11 +186,12 @@ const SideBarNavLink: FC<{
 	);
 };
 
-const TopNav: FC<MenuProps> = ({ activeItem, setActiveItem }) => {
+const TopNav: FC<MenuProps> = ({ activeItem, setActiveItem, scrollY }) => {
+
 	return (
 		<header
 			className={`${
-				scrollY >= 70 ? 'bg-[#131313]' : 'bg-transparent'
+				scrollY ? (scrollY >= 70 ? 'bg-[#131313]' : 'bg-transparent') : 'bg-transparent'
 			} sticky top-0 duration-500 px-1 pt-1 pb-4 z-50`}
 		>
 			<NavigationMenu className='max-w-full flex flex-row justify-between pt-5 z-50 duration-500'>
