@@ -177,8 +177,8 @@ const SideBarNavLink: FC<{
 
 	return (
 		<NavigationMenuItem asChild>
-			<Link href={item.href} passHref onClick={handleClick}>
-				<NavigationMenuLink className={`${isActive ? 'text-pink-red' : 'text-white'}`}>
+			<Link href={item.href} legacyBehavior passHref>
+				<NavigationMenuLink className={`${isActive ? 'text-pink-red' : 'text-white'}`} onClick={handleClick}>
 					{item.label}
 				</NavigationMenuLink>
 			</Link>
