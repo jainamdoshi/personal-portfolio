@@ -112,7 +112,7 @@ export default function Header() {
 		return <SideNav activeItem={activeItem} setActiveItem={setActiveItem} />;
 	}
 
-	return <TopNav activeItem={activeItem} setActiveItem={setActiveItem} />;
+	return <TopNav activeItem={activeItem} setActiveItem={setActiveItem} scrollY={scrollY} />;
 }
 
 const SideNav: FC<MenuProps> = ({ activeItem, setActiveItem }) => {
@@ -187,7 +187,6 @@ const SideBarNavLink: FC<{
 };
 
 const TopNav: FC<MenuProps> = ({ activeItem, setActiveItem, scrollY }) => {
-
 	return (
 		<header
 			className={`${
