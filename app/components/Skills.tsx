@@ -90,7 +90,7 @@ const tools: CardItem[] = [
 
 export default function Skills() {
 	return (
-		<div id='skills' className='max-sm:px-6 max-md:px-10 px-15 max-sm:py-1 max-md:py-2 py-3 mb-6 bg-[#131313]'>
+		<div id='skills' className='max-sm:px-6 max-md:px-10 px-15 max-sm:py-1 max-md:py-2 py-3 mb-6'>
 			<Title title='Skills' />
 			<div className='max-sm:px-1 max-md:px-5 px-8'>
 				<SkillCard title='Languages' description='I know' icons={languages} />
