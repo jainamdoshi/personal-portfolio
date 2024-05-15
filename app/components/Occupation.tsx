@@ -33,6 +33,6 @@ export default function Occupation() {
     });
 
     return (
-        <div className="occupation h-16 text-6xl font-extrabold tracking-wide mb-6 text-pink-red"></div>
-    );
+		<div className='occupation max-sm:h-8 max-md:h-12 h-16 max-sm:text-2xl max-md:text-4xl text-6xl font-extrabold tracking-wide max-sm:mb-2 max-md:mb-4 mb-6 text-pink-red'></div>
+	);
 }

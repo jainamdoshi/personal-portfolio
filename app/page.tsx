@@ -1,8 +1,9 @@
+import dynamic from 'next/dynamic';
 import Home from './components/Home';
-import About from './components/About';
-import Header from './components/Header';
-import Skills from './components/Skills';
 import Projects, { ProjectProps } from './components/Projects';
+import Skills from './components/Skills';
+import About from './components/About';
+const Header = dynamic(() => import('./components/Header'), { ssr: false });
 
 export default function App() {
 	const projects: ProjectProps[] = [
@@ -13,7 +14,7 @@ export default function App() {
 				'A personal portfolio webpage which showcases my education, skills, achievements, certifications, and projects',
 			coverImage: 'https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/personal-portfolio-coverimage.png',
 			url: 'https://github.com/jainamdoshi/personal-portfolio.git',
-			tags: ['TypeScript', 'NextJS', 'TailwindCSS', 'AWS S3', 'AWS Route 53']
+			tags: ['TypeScript', 'NextJS', 'ShadCN UI', 'TailwindCSS', 'AWS S3', 'AWS Route 53']
 		},
 		{
 			title: 'Pacman Game AI',
