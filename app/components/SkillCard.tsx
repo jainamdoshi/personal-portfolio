@@ -21,8 +21,8 @@ export default function SkillCard(props: CardProps) {
 	return (
 		<div className='bg-pink-red max-sm:mx-0 max-md:mx-1 mx-[8.5rem] rounded-lg mb-10 overflow-hidden shadow-pink-red'>
 			<div className='flex flex-row h-full'>
-				<div className='w-2/5 flex flex-col text-center py-3 justify-center'>
-					<h3 className='max-sm:text-sm max-md:text-md text-3xl max-sm:font-medium max-md:font-semibold font-bold pb-2 text-shadow-black'>
+				<div className='w-2/5 flex flex-col text-center py-3 justify-center overflow-hidden'>
+					<h3 className='max-sm:text-sm max-md:text-md text-2xl max-sm:font-medium max-md:font-semibold font-bold pb-2 text-shadow-black'>
 						{props.title}
 					</h3>
 					<p className='max-sm:text-sm max-md:text-lg text-2xl max-sm:font-normal max-md:font-medium font-semibold text-shadow-black'>
@@ -59,10 +59,9 @@ const SkillIcon: FC<{ icon: Icon }> = ({ icon }) => {
 };
 
 const SkillCarousel: FC<{ icons: Icon[] }> = ({ icons }) => {
-
-    while (icons.length < 20) {
-        icons = icons.concat(icons);
-    }
+	while (icons.length < 20) {
+		icons = icons.concat(icons);
+	}
 
 	return (
 		<Carousel
