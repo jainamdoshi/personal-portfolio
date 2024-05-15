@@ -14,7 +14,7 @@ export default function About() {
 	return (
 		<div id='about-me' className='max-sm:px-7 max-md:px-12 px-16'>
 			<Title title='About Me' />
-			<div className='flex max-lg:flex-col flex-row mt-5'>
+			<div className='flex max-lg:flex-col flex-row max-sm:mt-0 mt-5'>
 				<div className='m-5'>
 					<Image
 						src='https://jainam-doshi-public.s3.ap-southeast-2.amazonaws.com/Jainam+Photo.jpg'
