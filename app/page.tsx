@@ -1,8 +1,8 @@
-import About from './components/About';
-import Home from './components/Home';
 import dynamic from 'next/dynamic';
+import Home from './components/Home';
 import Projects, { ProjectProps } from './components/Projects';
 import Skills from './components/Skills';
+import About from './components/About';
 const Header = dynamic(() => import('./components/Header'), { ssr: false });
 
 export default function App() {
