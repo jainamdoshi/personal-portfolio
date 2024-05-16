@@ -2,7 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ReactNode, useState } from 'react';
-import { TimeLine, TimeLineItem } from './Timeline';
+import { TimeLine, TimeLineItem } from '../components/ui/Timeline';
 
 type Tab = {
 	title: string;

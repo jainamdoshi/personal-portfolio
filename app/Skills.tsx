@@ -34,7 +34,7 @@ import {
 	SiTailwindcss
 } from 'react-icons/si';
 import { TbBrandCpp, TbBrandMysql, TbBrandNextjs, TbBrandVscode, TbSql } from 'react-icons/tb';
-import Title from './Misc';
+import Title from '../components/ui/Misc';
 import SkillCard from './SkillCard';
 
 type CardItem = {

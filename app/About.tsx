@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
 import Career from './Career';
-import Title from './Misc';
+import Title from '../components/ui/Misc';
 
 const paragraphs = [
 	'With an enthusiasm for science and technology that has been ingrained in me since childhood, I have always been drawn to the thrill of solving problems and reveling in those "Ah-hah" moments when faced with challenges.',

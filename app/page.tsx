@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
-import Home from './components/Home';
-import Projects, { ProjectProps } from './components/Projects';
-import Skills from './components/Skills';
-import About from './components/About';
-const Header = dynamic(() => import('./components/Header'), { ssr: false });
+import Home from './Home';
+import Projects, { ProjectProps } from './Projects';
+import Skills from './Skills';
+import About from './About';
+const Header = dynamic(() => import('./Header'), { ssr: false });
 
 export default function App() {
 	const projects: ProjectProps[] = [

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Title from './Misc';
+import Title from '../components/ui/Misc';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
