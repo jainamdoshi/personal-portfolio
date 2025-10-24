@@ -15,12 +15,29 @@ const tabs: Tab[] = [
         title: 'Experience',
         body: (
             <TimeLine>
-                <TimeLineItem
-                    title='Full-Stack Developer'
-                    company='Clinibase'
-                    date='July 2024 - Current'
-                    empType='Full-Time'
-                ></TimeLineItem>
+                <TimeLineItem title='Full-Stack Developer' company='Clinibase' date='July 2024 - Current' empType='Full-Time'>
+                    <p>
+                        Integrated FDA-approved eSource capabilities into a proprietary Australian Clinical Trial Management System (CTMS),
+                        enhancing real-time data capture, accuracy, compliance, and interoperability with external systems.
+                    </p>
+                    <p>
+                        Implemented and maintained role-based access control (RBAC) for Sponsors, CROs, investigators, and recruiters to
+                        ensure secure monitoring, regulatory traceability, and improved trial efficiency.
+                    </p>
+                    <p>
+                        Collaborated closely with clinical trial clients to gather feedback, refine UX, and align platform features with
+                        regulatory processes and study-specific requirements, ensuring rapid and tailored trial setups.
+                    </p>
+                    <p>
+                        Developed a real-time AWS data pipeline to automate reporting and visualization through interactive charts and
+                        dashboards.
+                    </p>
+                    <p>
+                        Conducted training sessions for clinical trial personnel on CTMS functionalities, improving user adoption and
+                        compliance.
+                    </p>
+                    <p>Mentored new developers, guiding them through system architecture, coding standards, and development workflows.</p>
+                </TimeLineItem>
                 <TimeLineItem
                     title='Full-Stack Developer'
                     company='Friday Technologies'
